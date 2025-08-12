@@ -1,4 +1,8 @@
-export default function ClassList({ classes, selectedClass, setSelectedClass }) {
+export default function ClassList({
+  classes,
+  selectedClass,
+  setSelectedClass,
+}) {
   return (
     <div className="class-select">
       {classes.map((cls) => {
@@ -7,6 +11,7 @@ export default function ClassList({ classes, selectedClass, setSelectedClass }) 
             key={cls.name}
             onClick={() => setSelectedClass(cls)}
             className={cls.name === selectedClass?.name ? "selected" : ""}
+            id="button"
           >
             {cls.name}
           </a>

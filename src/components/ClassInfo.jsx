@@ -9,7 +9,7 @@ export default function ClassInfo({ cls, selectedClass }) {
         </div>
 
         <div className="class-desc">
-          <p>Something here</p>
+          <p> Choose a class below to see it's details.</p>
         </div>
       </>
     );

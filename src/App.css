@@ -1,29 +1,33 @@
 :root {
-  --dracula-bg: #282a36;
-  --dracula-current-line: #44475a;
-  --dracula-selection: #44475a;
-  --dracula-foreground: #f8f8f2;
-  --dracula-comment: #6272a4;
-
-  --dracula-cyan: #8be9fd;
-  --dracula-green: #50fa7b;
-  --dracula-orange: #ffb86c;
-  --dracula-pink: #ff79c6;
-  --dracula-purple: #bd93f9;
-  --dracula-red: #ff5555;
-  --dracula-yellow: #f1fa8c;
+  --bg: #2b1d0b;
+  --surface: #1b140b;
+  --text: #f5f2e8;
+  --muted: #8e8068;
+  --border: #3a2a16;
+  --accent: #cf9d42;
+  --accent-2: #d1a44e;
+  --accent-3: #bb7720;
+  --accent-4: #71714a;
+  --accent-5: #462d0b;
+}
+* {
+  box-sizing: content-box;
+}
+@keyframes iconFloat {
+  0% {
+    top: 20px;
+  }
+  50% {
+    top: 0px;
+  }
+  100% {
+    top: 20px;
+  }
 }
 
-/* quick usage */
 body {
-  background: var(--dracula-bg);
-  color: var(--dracula-foreground);
-}
-a {
-  color: var(--dracula-purple);
-}
-a:hover {
-  color: var(--dracula-pink);
+  background: var(--bg);
+  color: var(--text);
 }
 
 main {
@@ -41,15 +45,33 @@ main {
   align-items: center;
 }
 
+.class-img img {
+  position: relative;
+  animation: iconFloat 5s infinite ease-in-out;
+}
+
 .class-desc {
-  width: 600px;
+  width: 500px;
   height: 100px;
   margin-top: 1.5rem;
+  font-size: 1.2rem;
+  background-color: var(--accent-4);
+  border-radius: 0.5rem;
+  border: 5px solid var(--accent-3);
+  box-shadow: 5px 5px var(--surface);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.class-desc p {
+  margin: 0;
+  padding: 5px;
 }
 
 .class-select {
   margin-top: 0.5rem;
-  width: 600px;
+  width: 500px;
   height: 300px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -63,15 +85,25 @@ main {
   align-items: center;
   margin: 0 auto;
   text-align: center;
-  background-color: var(--dracula-comment);
-  color: var(--dracula-foreground);
+  background-color: var(--accent-4);
+  color: var(--text);
   width: 50%;
   height: 70%;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border-radius: 0;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out, border-radius 0.5s ease-in-out,
+    width 0.3s ease-in-out;
+  font-weight: bold;
+  box-shadow: 5px 5px var(--accent-3);
 }
 
-.class-select a:hover, .class-select a.selected {
-  background-color: var(--dracula-selection);
-  color: var(--dracula-red);
+.class-select a:hover,
+.class-select a.selected {
+  background-color: var(--accent-2);
+  color: var(--bg);
   cursor: pointer;
+  box-shadow: 5px 5px var(--accent-4);
+  border-radius: 0.2rem;
+  width: 60%;
+  height: 80%;
 }
